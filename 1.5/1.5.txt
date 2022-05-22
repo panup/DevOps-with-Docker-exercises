@@ -1,0 +1,26 @@
+C:\>docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED         SIZE
+ubuntu                              latest    54c9d81cbb44   2 weeks ago     72.8MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   11 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   11 months ago   15.7MB
+
+C:\>docker run -d -it devopsdockeruh/simple-web-service:alpine
+0745bd8d7300b44e8d140294981a6357b0727191e6e8800872df260c7f141a57
+
+C:\>docker ps
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED          STATUS          PORTS     NAMES
+0745bd8d7300   devopsdockeruh/simple-web-service:alpine   "/usr/src/app/server"   14 seconds ago   Up 14 seconds             focused_pike
+
+C:\>docker exec -it 07 sh
+/usr/src/app # tail ./text.log
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-22 13:57:12 +0000 UTC
+2022-02-22 13:57:14 +0000 UTC
+2022-02-22 13:57:16 +0000 UTC
+2022-02-22 13:57:18 +0000 UTC
+2022-02-22 13:57:20 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-22 13:57:22 +0000 UTC
+2022-02-22 13:57:24 +0000 UTC
+2022-02-22 13:57:26 +0000 UTC
+/usr/src/app #

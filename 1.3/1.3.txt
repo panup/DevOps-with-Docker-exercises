@@ -1,0 +1,20 @@
+C:\>docker run -d --rm -it --name secret_msg devopsdockeruh/simple-web-service:ubuntu
+58864fd98586e950c286753424415a1f1b7aeba5e39e37b9c2bc5a0d08e7727a
+
+C:\>docker ps
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED         STATUS         PORTS     NAMES
+58864fd98586   devopsdockeruh/simple-web-service:ubuntu   "/usr/src/app/server"   5 seconds ago   Up 4 seconds             secret_msg
+
+C:\>docker exec -it secret_msg bash
+root@58864fd98586:/usr/src/app# tail ./text.log
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-22 13:26:46 +0000 UTC
+2022-02-22 13:26:48 +0000 UTC
+2022-02-22 13:26:50 +0000 UTC
+2022-02-22 13:26:52 +0000 UTC
+2022-02-22 13:26:54 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-22 13:26:56 +0000 UTC
+2022-02-22 13:26:58 +0000 UTC
+2022-02-22 13:27:00 +0000 UTC
+root@58864fd98586:/usr/src/app#

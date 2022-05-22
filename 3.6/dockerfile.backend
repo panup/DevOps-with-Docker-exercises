@@ -1,0 +1,21 @@
+FROM golang:alpine AS build
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN CGO_ENABLED=0 go build
+
+
+
+FROM scratch
+
+WORKDIR /app
+
+COPY --from=build /usr/src/app /app
+
+ENV REQUEST_ORIGIN http://localhost:5000
+
+ENV PORT 8000
+
+CMD ["./server"]

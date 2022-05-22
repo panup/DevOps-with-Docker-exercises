@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  frontend:
+    image: front
+    restart: unless-stopped
+    ports:
+      - 5000:5000
+    environment:
+      REACT_APP_BACKEND_URL: http://localhost:8000
+  backend:
+    image: back
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    environment:
+      REQUEST_ORIGIN: http://localhost:5000
+      PORT: 8000
+

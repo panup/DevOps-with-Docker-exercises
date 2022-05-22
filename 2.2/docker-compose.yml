@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  simple:
+    image: devopsdockeruh/simple-web-service
+    command: server
+    volumes:
+      - C:/temp/text.log:/usr/src/app/text.log
+    ports:
+      - "5000:8080"

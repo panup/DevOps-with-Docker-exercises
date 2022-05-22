@@ -1,0 +1,9 @@
+C:\>docker run -it --rm devopsdockeruh/pull_exercise
+Give me the password: basics
+You found the correct password. Secret message is:
+"This is the secret message"
+
+
+C:\>
+
+Password from https://github.com/docker-hy/docs-exercise README.md

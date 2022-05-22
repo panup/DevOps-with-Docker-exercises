@@ -1,0 +1,26 @@
+C:\>docker run -d nginx
+49359ec6642c8d2648f837a43d92216609de6bf3008a7028265c4b209524b7fb
+
+C:\>docker run -d nginx
+f37742acd0ff013cff57c64042af9923089767fea2342ccf3f361824a6f7c9bb
+
+C:\>docker run -d nginx
+579402254bbf4c76862b628225a881a0f2078f657b6c394a923cc3eb5255af45
+
+C:\>docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+579402254bbf   nginx     "/docker-entrypoint.…"   21 seconds ago   Up 20 seconds   80/tcp    vigorous_ritchie
+f37742acd0ff   nginx     "/docker-entrypoint.…"   23 seconds ago   Up 22 seconds   80/tcp    magical_albattani
+49359ec6642c   nginx     "/docker-entrypoint.…"   26 seconds ago   Up 25 seconds   80/tcp    wonderful_gauss
+
+C:\>docker stop 57 49
+57
+49
+
+C:\>docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                     PORTS     NAMES
+579402254bbf   nginx     "/docker-entrypoint.…"   55 seconds ago       Exited (0) 4 seconds ago             vigorous_ritchie
+f37742acd0ff   nginx     "/docker-entrypoint.…"   57 seconds ago       Up 56 seconds              80/tcp    magical_albattani
+49359ec6642c   nginx     "/docker-entrypoint.…"   About a minute ago   Exited (0) 4 seconds ago             wonderful_gauss
+
+C:\>

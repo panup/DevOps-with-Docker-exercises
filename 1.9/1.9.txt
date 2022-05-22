@@ -1,0 +1,1 @@
+docker run -d --rm -v C:/temp/text.log:/usr/src/app/text.log devopsdockeruh/simple-web-service:alpine

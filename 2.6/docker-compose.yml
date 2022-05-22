@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  frontend:
+    image: front
+    restart: unless-stopped
+    depends_on: 
+      - back
+    ports:
+      - 5000:5000
+    environment:
+      REACT_APP_BACKEND_URL: http://localhost:8000
+  backend:
+    image: back
+    depends_on: 
+      - redis
+      - podb
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    environment:
+      REQUEST_ORIGIN: http://localhost:5000
+      PORT: 8000
+      REDIS_HOST: redis
+      POSTGRES_HOST: podb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DATABASE: postgres
+  redis:
+    image: redis
+    restart: unless-stopped
+    command: redis-server
+    ports:
+      - "6379:6379"
+  podb:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DATABASE: postgres
