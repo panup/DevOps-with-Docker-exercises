@@ -1,0 +1,24 @@
+name: runner-test
+
+on: 
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on:
+      - self-hosted
+      
+    steps:
+    
+      - uses: actions/checkout@v2
+      - name: run script
+        run: |
+          exho hello
+          sleep 15
+          echo bye
+          
+      - name: run script 2
+        run: |
+          echo "${{ github.workspace }}"
+          
+          
