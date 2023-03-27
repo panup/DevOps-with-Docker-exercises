@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: run script
         run: |
-          exho hello
+          echo hello
           sleep 15
           echo bye
           
